@@ -11,6 +11,16 @@ const displayPhones = (phones) => {
   const phoneContainer = document.getElementById("phone-container");
   // clear before add new
   phoneContainer.textContent = "";
+
+  // show all button
+  const showAllContainer = document.getElementById("show-all-container");
+  if (phones.length > 12) {
+    showAllContainer.classList.remove("hidden");
+  } else {
+    showAllContainer.classList.add("hidden");
+  }
+
+  phones = phones.slice(0, 12);
   phones.forEach((phone) => {
     const phoneCard = document.createElement("div");
     phoneCard.classList = `card w-80 bg-gray-100 p-4 shadow-xl`;
